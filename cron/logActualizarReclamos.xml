@@ -1,0 +1,25 @@
+<configuration xmlns="http://logging.apache.org/log4php/">
+
+	<appender name="default" class="LoggerAppenderEcho">
+		<layout class="LoggerLayoutPattern">
+			<param name="conversionPattern" value="%date %-5level %msg%n " />
+		</layout>
+	</appender>
+	
+	<appender name="loggerFile" class="LoggerAppenderRollingFile"
+		threshold="DEBUG">
+		<layout class="LoggerLayoutPattern">
+			<param name="conversionPattern" value="%date %-5level %msg%n " />
+		</layout>
+
+		<param name="file" value="D:/Documents/Mis Webs/celf_core/logs/actualizar_reclamos.log" />
+		<param name="maxFileSize" value="1MB" />
+        <param name="maxBackupIndex" value="5" />
+
+	</appender>
+	
+	<root>
+		<level value="DEBUG" />
+		<appender_ref ref="loggerFile" />
+	</root>
+</configuration>
